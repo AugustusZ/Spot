@@ -39,6 +39,8 @@ Jake's fantastic works
 There will be a version with better quality to be released...
 ![](icon.jpg)
 
+## Presentation 
+Presented by Jake and Keyur. Click [here](Spot_presentation_slides.pdf) for slides.
 
 ## Future work
 - Refine UI
