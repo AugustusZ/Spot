@@ -1,20 +1,55 @@
 # Spot
-![](splash.png)
 
-This is a 46-hour team project for Esri Second Annual Weekend of Innovation. A demo video can be found [here](https://youtu.be/jD6eDb-i6jM).
+This is a 46-hour team project for Esri Second Annual Weekend of Innovation. 
 
-## Team 'the E-Walks'
+## Teamwork 
 | Work | Anup Deulgaonkar | Jake Devost | Keyur Kulkarni | Yankuan Zhang |
 | :----: | :-----: | :-----: | :-----: | :-----: | :-----: |
 | Demo |✅| | |✅|
-| Integration & Parsing |✅| | ||
+| C/S Communication |✅| | ||
 | Unity3D |✅| | |✅|
 | Coordinate Algorithm |✅| | |✅|
 | UI/UX ideation, Graphic Communication | |✅| | |
-| Logos & icons | |✅| |✅|
+| Logo & Icon | |✅| |✅|
 | Presentation | |✅|✅| |
 | Feature service implementation | | |✅| |
-| Geocoding datapoints | | |✅| |
+| GeoData | | |✅| |
+
+##Demo
+- A demo video can be found [here](https://youtu.be/jD6eDb-i6jM).
+- A presentation can be found [here](https://youtu.be/M4NN-aa8t5E).
+
+## C/S Communication
+REST API of ArcGIS Server 
+
+## Unity3D
+We used [Vuforia](https://developer.vuforia.com/) package for Unity3D.
+
+## Coordinate Algorithm 
+To be documented...
+
+## UI/UX...
+Jake's fantastic works
+
+## Logo & Icon
+### Splash Screen
+![](splash.png)
+
+### App Icon 
+There will be a version with better quality to be released...
+![](icon.jpg)
 
 
+## Future work
+- Refine UI
+	- better-quality icon
+	- properly organized labels
+	- sync label position vertically
 
+- Migrate out of Unity3D
+	- use Vuforia iOS [SDK](https://developer.vuforia.com/downloads/sdk)
+	- try [Wikitude](http://www.wikitude.com/)
+
+- Enable accessibility
+	- Voice control
+	- Speak-out
