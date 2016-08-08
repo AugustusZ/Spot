@@ -5,46 +5,24 @@ This is a 46-hour team project for Esri Second Annual Weekend of Innovation.
 ## Teamwork 
 | Work | Anup Deulgaonkar | Jake Devost | Keyur Kulkarni | Yankuan Zhang |
 | :----: | :-----: | :-----: | :-----: | :-----: | :-----: |
-| [Demo](#demo) |✅| | |✅|
-| [Client-Server Communication](#client-server-communication) |✅| | ||
+| [Demo and Presentation](#demo-and-presentation) |✅|✅|✅|✅|
+| [Data Communication](#data-communication) |✅| |✅||
 | [Unity3D](#unity3d) |✅| | |✅|
 | [Coordinate Algorithm](#coordinate-algorithm) |✅| | |✅|
-| [UI/UX ideation and Graphic Communication](#ui/ux-ideation-and-graphic-communication) | |✅| | |
-| [Logo and Icon](#logo-and-icon) | |✅| |✅|
-| [Presentation](#presentation) | |✅|✅| |
-| [Data Preparation and Feature Service](#data-preparation-and-feature-service) | | |✅| |
+| [UI/UX Design](#uiux-design) | |✅| |✅|
 
-##Demo
-- A demo video can be found [here](https://youtu.be/jD6eDb-i6jM).
-- A presentation can be found [here](https://youtu.be/M4NN-aa8t5E).
+And [future work](#future-work).
 
-## Client-Server Communication
-REST API of [ArcGIS Server](https://services6.arcgis.com/j576TQTjtSTh0SdN/ArcGIS/rest/services/HackESRI/FeatureServer/0)
+##Demo and Presentation
+- [Demo video](https://youtu.be/jD6eDb-i6jM)
+- [Presentation](https://youtu.be/M4NN-aa8t5E) 
+- [Slides](Spot_presentation_slides.pdf)
 
-## Unity3D
-We used [Vuforia](https://developer.vuforia.com/) package for [Unity3D](https://unity3d.com/).
+## Data Communication
+REST API of [ArcGIS Server](https://services6.arcgis.com/j576TQTjtSTh0SdN/ArcGIS/rest/services/HackESRI/FeatureServer/0).
 
-## Coordinate Algorithm 
-
-To be documented...
-
-## UI/UX Ideation and Graphic Communication
-By Jake. See more Jake's fantastic works, click [here](https://issuu.com/robertdevost/).
-
-## Logo and Icon
-### Splash Screen
-![](splash.png)
-
-### App Icon 
-There will be a version with better quality to be released...
-![](icon.jpg)
-
-## Presentation 
-Presented by Jake and Keyur. Click [here](Spot_presentation_slides.pdf) for slides.
-
-## Data Preparation and Feature Service
 ### Callback JSON data structure
-For each element in the array of `features` in callback, we have object **name** and its **description** as well as **latitude and longitude**, e.g.,
+For each element in the array of `features` in callback, we have object **name** and its **description** as well as **latitude and longitude** for the center point of the object, e.g.,
 	
 	{
 		"attributes" : {
@@ -58,7 +36,25 @@ For each element in the array of `features` in callback, we have object **name**
 		}
 	},
 
-## Future work
+
+## Unity3D
+We used [Vuforia](https://developer.vuforia.com/) package for [Unity3D](https://unity3d.com/).
+
+## Coordinate Algorithm 
+To be documented...
+
+## UI/UX Design
+### UI/UX ideation and Graphic Communication
+By Jake. See more Jake's fantastic works, click [here](https://issuu.com/robertdevost/).
+
+### Splash Screen
+![](splash.png)
+
+### App Icon 
+There will be a version with better quality to be released...
+![](icon.jpg)
+
+## Future Work
 - Refine UI
 	- perspective
 		- contrast in color 	 
