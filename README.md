@@ -39,8 +39,14 @@ For each element in the array of `features` in callback, we have object **name**
 
 ## Unity3D
 We used [Vuforia](https://developer.vuforia.com/) package for [Unity3D](https://unity3d.com/).
+### Installation guidelines 
+To be documented...
 
-## Coordinate Algorithm 
+## App Design and Implementation 
+### Workflow 
+![](workflow.png)
+
+### Coordinate conversion algorithm
 To be documented...
 
 ## UI/UX Design
