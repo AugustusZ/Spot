@@ -38,27 +38,117 @@ For each element in the array of `features` in callback, we have object **name**
 
 
 ## Unity3D
-We used [Vuforia](https://developer.vuforia.com/) package for [Unity3D](https://unity3d.com/).
+We used [Vuforia](https://developer.vuforia.com/) package for [Unity3D](https://unity3d.com/). Repo subfolder [Spot](Spot) is the Unity3D project.
+
 ### Installation guidelines 
 To be documented...
 
 ## App Design and Implementation 
-### Workflow 
-![](workflow.png)
+### Architecture
+![](images/architecture.png)
 
-### Coordinate conversion algorithm
-To be documented...
+### Algorithms
+
+Don't forget to check angle unit (deg or rad) when use trigonometric functions. Here, input `lat1`, `lon1`, `lat2`, `lon2` are all in degree. If trigonometric functions are in radian, we will convert coordinates to radian by multiplying by `DEG_TO_RAD`, value of which is `pi/180`. If we want to convert from rad to deg, then multiply by `RAD_TO_DEG`, value of which is `180/pi`.
+
+#### Distance 
+
+	function distanceBetween(lat1, lon1, lat2, lon2) {
+		lat1 = lat1 * DEG_TO_RAD;
+		lon1 = lon1 * DEG_TO_RAD;
+		lat2 = lat2 * DEG_TO_RAD;
+		lon2 = lon2 * DEG_TO_RAD;
+
+	    dLat = lat2 - lat1;
+	    dLon = lon2 - lon1;
+	    a = sin(dLat / 2) * sin(dLat / 2) + cos(lat1) * cos(lat1) * sin(dLon / 2) * sin(dLon / 2);
+	    return EARTH_RADIUS * 2 * atan2(sqrt(a), sqrt(1 - a)); // EARTH_RADIUS ~ 6371 km
+	}
+
+#### Font Size
+Label font size ranges from 19 to 40. If the distance is greater than 300m, fix the size to 19.
+
+	distance = distanceBetween(...);
+	
+	function getFontSizeFromDistance(distance) {
+		// unit of distance: meter
+		if (distance > 300) {
+			return 19;
+		} 
+		return ceil(40 - distance / 14);
+	} 
+
+#### Bearing 
+![](images/angles.png)
+
+The return value ∈ `(-180, 180]`.
+
+	function bearingBetween(lat1, lon1, lat2, lon2) {
+		lat1 = lat1 * DEG_TO_RAD;
+		lon1 = lon1 * DEG_TO_RAD;
+		lat2 = lat2 * DEG_TO_RAD;
+		lon2 = lon2 * DEG_TO_RAD;
+
+	    y = sin(lon2 - lon1) * cos(lat2);
+	    x = cos(lat1) * sin(lat2) - sin(lat1) * cos(lat2) * cos(lon2 - lon1);
+	    return atan2(y, x) * RAD_TO_DEG;
+	}
+	
+#### Theta
+Because 
+
+- `bearing` ∈ `(-180, 180]`
+- `heading` ∈ `[0, 360)` (read from device sensor)
+
+So, `bearing - heading` ∈ `(-540, 180]`. To deduce the range to `(-180, 180]`,
+	
+	bearing = bearingBetween(...);
+	heading = compass.trueHeading;
+	
+	function calculateTheta(bearing, heading) {
+		theta = bearing - heading;
+		return (theta < -180) ? theta + 360 : theta;
+	}
+	
+#### FOV 
+FOV (field of view) is a camera parameter. For iPhone 6 camera, FOV is 63.54°, according to [this](http://www.wired.com/2015/05/measuring-field-view-iphone-6-camera/). And this number works as well for iPhone 5S/SE.
+
+(Yes, we should read the parameter from device sensor API directly. But the numbers we read did not really make sense to us and would lead to wrong label position calculation. So we hardcoded it for now until we figure it out.)
+
+#### X-offset on screen
+![](images/x-offset.png)
+
+To calculate label `xOffset` from vertical center line of the screen, we need:
+
+- FOV
+- `theta`
+- width of screen (read from device)
+
+Let's skip the how we get the formula and give it directly: 
+
+	function getXOffset(theta, fieldOfView, screenWidth) {
+		theta = theta * DEG_TO_RAD;
+		fieldOfView = fieldOfView * DEG_TO_RAD;
+
+		return 0.5 * tan(theta) / tan(fieldOfView) * screenWidth;
+	}
+	
+Yes, we can do the same calculation for `yOffset`, with:
+
+- vertical FOV
+- vertical `theta`
+- height of screen
 
 ## UI/UX Design
 ### UI/UX ideation and Graphic Communication
 By Jake. See more Jake's fantastic works, click [here](https://issuu.com/robertdevost/).
 
 ### Splash Screen
-![](splash.png)
+![](images/splash.png)
 
 ### App Icon 
 There will be a version with better quality to be released...
-![](icon.jpg)
+![](images/icon.jpg)
 
 ## Future Work
 - Refine UI
