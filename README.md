@@ -5,7 +5,7 @@ This is a 46-hour team project for Esri Second Annual Weekend of Innovation.
 ## Teamwork 
 
 | Work | Anup Deulgaonkar | Jake Devost | Keyur Kulkarni | Yankuan Zhang |
-|:----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+|:----:|:-----:|:-----:|:-----:|:-----:|
 | [Demo and Presentation](#demo-and-presentation) | ✅ | ✅ | ✅ | ✅ |
 | [Data Communication](#data-communication) | ✅ | | ✅ | |
 | [Unity3D](#unity3d) | ✅ | |  | ✅ |
