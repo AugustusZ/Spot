@@ -3,25 +3,29 @@
 This is a 46-hour team project for Esri Second Annual Weekend of Innovation. 
 
 ## Teamwork 
+
 | Work | Anup Deulgaonkar | Jake Devost | Keyur Kulkarni | Yankuan Zhang |
 | :----: | :-----: | :-----: | :-----: | :-----: | :-----: |
-| [Demo and Presentation](#demo-and-presentation) |✅|✅|✅|✅|
-| [Data Communication](#data-communication) |✅| |✅||
-| [Unity3D](#unity3d) |✅| | |✅|
-| [Coordinate Algorithm](#coordinate-algorithm) |✅| | |✅|
-| [UI/UX Design](#uiux-design) | |✅| |✅|
+| [Demo and Presentation](#demo-and-presentation) | ✅ | ✅ | ✅ | ✅ |
+| [Data Communication](#data-communication) | ✅ | | ✅ | |
+| [Unity3D](#unity3d) | ✅ | |  | ✅ |
+| [Coordinate Algorithm](#coordinate-algorithm) | ✅ | | | ✅ |
+| [UI/UX Design](#uiux-design) | | ✅ | | ✅ |
 
 And [future work](#future-work).
 
 ##Demo and Presentation
+
 - [Demo video](https://youtu.be/jD6eDb-i6jM)
 - [Presentation](https://youtu.be/M4NN-aa8t5E) 
 - [Slides](Spot_presentation_slides.pdf)
 
 ## Data Communication
+
 REST API of [ArcGIS Server](https://services6.arcgis.com/j576TQTjtSTh0SdN/ArcGIS/rest/services/HackESRI/FeatureServer/0).
 
 ### Callback JSON data structure
+
 For each element in the array of `features` in callback, we have object **name** and its **description** as well as **latitude and longitude** for the center point of the object, e.g.,
 	
 	{
@@ -38,13 +42,17 @@ For each element in the array of `features` in callback, we have object **name**
 
 
 ## Unity3D
+
 We used [Vuforia](https://developer.vuforia.com/) package for [Unity3D](https://unity3d.com/). Repo subfolder [Spot](Spot) is the Unity3D project.
 
 ### Installation guidelines 
+
 To be documented...
 
 ## App Design and Implementation 
+
 ### Architecture
+
 ![](images/architecture.png)
 
 ### Algorithms
@@ -66,6 +74,7 @@ Don't forget to check angle unit (deg or rad) when use trigonometric functions. 
 	}
 
 #### Font Size
+
 Label font size ranges from 19 to 40. If the distance is greater than 300m, fix the size to 19.
 
 	distance = distanceBetween(...);
@@ -79,6 +88,7 @@ Label font size ranges from 19 to 40. If the distance is greater than 300m, fix 
 	} 
 
 #### Bearing 
+
 ![](images/angles.png)
 
 The return value ∈ `(-180, 180]`.
@@ -95,6 +105,7 @@ The return value ∈ `(-180, 180]`.
 	}
 	
 #### Theta
+
 Because 
 
 - `bearing` ∈ `(-180, 180]`
@@ -111,11 +122,13 @@ So, `bearing - heading` ∈ `(-540, 180]`. To deduce the range to `(-180, 180]`,
 	}
 	
 #### FOV 
+
 FOV (field of view) is a camera parameter. For iPhone 6 camera, FOV is 63.54°, according to [this](http://www.wired.com/2015/05/measuring-field-view-iphone-6-camera/). And this number works as well for iPhone 5S/SE.
 
 (Yes, we should read the parameter from device sensor API directly. But the numbers we read did not really make sense to us and would lead to wrong label position calculation. So we hardcoded it for now until we figure it out.)
 
 #### X-offset on screen
+
 ![](images/x-offset.png)
 
 To calculate label `xOffset` from vertical center line of the screen, we need:
@@ -140,17 +153,22 @@ Yes, we can do the same calculation for `yOffset`, with:
 - height of screen
 
 ## UI/UX Design
+
 ### UI/UX ideation and Graphic Communication
+
 By Jake. See more Jake's fantastic works, click [here](https://issuu.com/robertdevost/).
 
 ### Splash Screen
+
 ![](images/splash.png)
 
 ### App Icon 
+
 There will be a version with better quality to be released...
 ![](images/icon.jpg)
 
 ## Future Work
+
 - Refine UI
 	- perspective
 		- contrast in color 	 
