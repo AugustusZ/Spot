@@ -14,7 +14,7 @@ This is a 46-hour team project for Esri Second Annual Weekend of Innovation.
 
 And [future work](#future-work).
 
-##Demo and Presentation
+## Demo and Presentation
 
 - [Demo video](https://youtu.be/jD6eDb-i6jM)
 - [Presentation](https://youtu.be/M4NN-aa8t5E) 
