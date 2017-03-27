@@ -1,9 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CanvasCreate.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Manager.cs">
     <Files>
-      <File FileName="Assets/Scripts/CanvasCreate.cs" Line="10" Column="23" />
-      <File FileName="Assets/Scripts/DeviceCamera.cs" Line="21" Column="1" />
+      <File FileName="Assets/Scripts/Manager.cs" Line="226" Column="22" />
+      <File FileName="Assets/Scripts/DeviceCamera.cs" Line="20" Column="73" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
